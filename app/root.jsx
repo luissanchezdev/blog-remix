@@ -1,3 +1,17 @@
+import { 
+  Meta
+} from "@remix-run/react"
+
+export function meta () {
+  return (
+    [
+      { charset: 'utf-8', },
+      { title: 'Blog Remix' },
+      { viewport: 'width=device-width,initial-scale=1' }
+    ]
+  )
+}
+
 export default function App() {
   return(
     <Document>
@@ -6,12 +20,11 @@ export default function App() {
   )
 }
 
-export function Document({ children }) {
+function Document({ children }) {
   return (
     <html lang="en">
     <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <Meta />
       <title>Remix blog</title>
     </head>
     <body>
