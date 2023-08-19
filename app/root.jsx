@@ -1,6 +1,12 @@
 import { 
-  Meta
+  Meta,
+  Links,
+  LiveReload,
+  Outlet,
+  Scripts
 } from "@remix-run/react"
+import styles from './styles/index.css'
+import Header from "./routes/components/Header"
 
 export function meta () {
   return (
@@ -12,10 +18,36 @@ export function meta () {
   )
 }
 
+export function links () {
+  return [
+    {
+      rel: 'stylesheet',
+      href: 'https://necolas.github.io/normalize.css/8.0.1/normalize.css'
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com'
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.gstatic.com',
+      crossOrigin: 'true'
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,900&display=swap'
+    },
+    {
+      rel: 'stylesheet',
+      href: styles
+    }
+  ]
+}
+
 export default function App() {
   return(
     <Document>
-      <h1>Bienvenidos a Remix</h1>
+      <Outlet />
     </Document>
   )
 }
@@ -25,10 +57,14 @@ function Document({ children }) {
     <html lang="en">
     <head>
       <Meta />
+      <Links />
       <title>Remix blog</title>
     </head>
     <body>
+      <Header />
       { children }
+      <Scripts />
+      <LiveReload />
     </body>
     </html>
   )
