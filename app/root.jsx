@@ -6,8 +6,8 @@ import {
   Scripts
 } from "@remix-run/react"
 import styles from './styles/index.css'
-import Header from "./routes/components/Header"
-import Footer from "./routes/components/Footer"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 export function meta () {
   return (

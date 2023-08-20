@@ -1,6 +1,6 @@
 import { useLoaderData } from "@remix-run/react"
-import { getGuitarras } from "./models/guitarras.server"
-import Guitarra from "./components/Guitarra"
+import { getGuitarras } from "../models/guitarras.server"
+import Guitarra from "../components/Guitarra"
 import tienda from "../styles/tienda.css"
 
 export function meta(){
