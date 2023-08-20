@@ -7,13 +7,17 @@ import {
 } from "@remix-run/react"
 import styles from './styles/index.css'
 import Header from "./routes/components/Header"
+import Footer from "./routes/components/Footer"
 
 export function meta () {
   return (
     [
       { charset: 'utf-8', },
       { title: 'Blog Remix' },
-      { viewport: 'width=device-width,initial-scale=1' }
+      { 
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1' 
+      }
     ]
   )
 }
@@ -63,6 +67,7 @@ function Document({ children }) {
     <body>
       <Header />
       { children }
+      <Footer />
       <Scripts />
       <LiveReload />
     </body>
